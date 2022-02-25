@@ -11,23 +11,35 @@ This game runs on java which means it will be able to run on any operating syste
 ## Menu
 
 - [Upcoming Features](#upcoming-features)
-- [Documentation](#documentation)
+- [How Does It Work?](#how-does-it-work)
 - [About](#about)
 
 ## Upcoming Features
 - **Flagging Squares.** Being able to mark squares to flag them. This would allow the user a piece of mind and make the game not so tedious when remembering where strategically deduced bombs have been located.
 
 
-- **Timer.** A timer would allow for some type of urgency and thrill when playing. We'd also allow a customizeable timer for the laid back players who may be busy while playing and will take longer to complete each puzzle.
+- **Timer.** A timer would allow for some type of urgency and thrill when playing. We'd also allow a customizable timer for the laid back players who may be busy while playing and will take longer to complete each puzzle.
 
 
-- **Difficulties.** Having multiple difficulties (Easy, Medium, Hard, Impossible) would allow the game to be customizeable to different skill level players. The same difficulty may get repetitive. Multiple difficulties would give the user something to progress towards and a skill they can learn and improve on.
+- **Difficulties.** Having multiple difficulties (Easy, Medium, Hard, Impossible) would allow the game to be customizable to different skill level players. The same difficulty may get repetitive. Multiple difficulties would give the user something to progress towards and a skill they can learn and improve on.
 
 
-- **Customizeable environments.** The user will be able to change what the board looks like. (Dark mode, etc.) This would allow the user to feel more comfortable depending on the environment they are in (low light). It would also allow the user to feel more connected to the game when able to change the colors to exactly what they want.
+- **Customizable environments.** The user will be able to change what the board looks like. (Dark mode, etc.) This would allow the user to feel more comfortable depending on the environment they are in (low light). It would also allow the user to feel more connected to the game when able to change the colors to exactly what they want.
 
-## Documentation
 
+- **Customizable grid size.** Allowing the user to change the grid size of the MineSweeper game will allow the user to roughly control how long it may take them to finish a game. A larger grid size will take longer to complete giving the player an added sense of accomplishment.
+
+## How Does It Work?
+
+The program first initializes a window containing the grid of squares (20x20), a Reset button, and a Give Up button. All the bombs (roughly 20) are placed on the grid and the corresponding grids determine their number based on how many bombs are adjacent to them. When a grid is clicked, it checks to see if it was a bomb or if it was a 0. 
+
+When a grid of number 0 is clicked within a large pool of 0 grids, a recursive formula removes all grids from the 0 grids plus 1 adjacent square next to the 0 grid. We can do this because if 0 adjacent squares contain bombs, then we can remove those squares for the user. This just makes the game quicker and easier for the user without messing with game mechanics. 
+
+When a number grid 1-8 is clicked, just that grid is shown. 
+
+When a bomb is clicked, a Gameover pop-up window is displayed alerting the user that they have clicked a mine. After which the entire board is cleared off and the user can click the reset button to start a new game. 
+
+If the user manages to remove all non-bomb grids, leaving only bomb grids left, a pop-up window alerting the user that they've won is displayed. After clicking ok, the user can then click the reset button to start a new game.
 
 ## About
 
