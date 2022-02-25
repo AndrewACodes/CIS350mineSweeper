@@ -47,3 +47,4 @@ If the user manages to remove all non-bomb grids, leaving only bomb grids left, 
 
 ## About
 
+Project owner is Andrew Arent. Scrum Master is Riley Rawlings. Head Developer is Kaden Wende. We state that we are by no means the owner of the game "Minesweeper", we have just made a copy of a popular game for this project.
