@@ -39,7 +39,11 @@ When a number grid 1-8 is clicked, just that grid is shown.
 
 When a bomb is clicked, a Gameover pop-up window is displayed alerting the user that they have clicked a mine. After which the entire board is cleared off and the user can click the reset button to start a new game. 
 
+<img src="https://github.com/AndrewACodes/CIS350mineSweeper/blob/main/READMEpics/clickmineminesweeper.png" alt="---" style="max-width: 100%;" />
+
 If the user manages to remove all non-bomb grids, leaving only bomb grids left, a pop-up window alerting the user that they've won is displayed. After clicking ok, the user can then click the reset button to start a new game.
+
+<img src="https://github.com/AndrewACodes/CIS350mineSweeper/blob/main/READMEpics/youvewonminesweeper.png" alt="---" style="max-width: 100%;" />
 
 ## About
 
