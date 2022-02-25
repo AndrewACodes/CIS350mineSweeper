@@ -10,12 +10,21 @@ This game runs on java which means it will be able to run on any operating syste
 
 ## Menu
 
-- [Features](#features)
+- [Upcoming Features](#upcoming-features)
 - [Documentation](#documentation)
 - [About](#about)
 
-## Features
+## Upcoming Features
+- **Flagging Squares.** Being able to mark squares to flag them. This would allow the user a piece of mind and make the game not so tedious when remembering where strategically deduced bombs have been located.
 
+
+- **Timer.** A timer would allow for some type of urgency and thrill when playing. We'd also allow a customizeable timer for the laid back players who may be busy while playing and will take longer to complete each puzzle.
+
+
+- **Difficulties.** Having multiple difficulties (Easy, Medium, Hard, Impossible) would allow the game to be customizeable to different skill level players. The same difficulty may get repetitive. Multiple difficulties would give the user something to progress towards and a skill they can learn and improve on.
+
+
+- **Customizeable environments.** The user will be able to change what the board looks like. (Dark mode, etc.) This would allow the user to feel more comfortable depending on the environment they are in (low light). It would also allow the user to feel more connected to the game when able to change the colors to exactly what they want.
 
 ## Documentation
 
