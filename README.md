@@ -6,7 +6,7 @@ The game works by uncovering squares that have a chance to contain a bomb. If it
 
 This game runs on java which means it will be able to run on any operating system! Windows, Mac, any Linux distribution, doesn't matter it will be able to run. (The game may have different style based on operating system, but overall gameplay will be accurate and the same.)
 
-<img src="https://github.com/AndrewACodes/CIS350mineSweeper/blob/0cc9b27dc9dbaafff042d513eef4fa417a347d44/READMEpics/minesweeperpic.png" alt="---" style="max-width: 100%;" />
+<img src="https://github.com/AndrewACodes/CIS350mineSweeper/blob/main/READMEpics/minesweeper_pic2.jpg" alt="---" style="max-width: 100%;" />
 
 ## Menu
 
@@ -39,11 +39,11 @@ When a number grid 1-8 is clicked, just that grid is shown.
 
 When a bomb is clicked, a Gameover pop-up window is displayed alerting the user that they have clicked a mine. After which the entire board is cleared off and the user can click the reset button to start a new game. 
 
-<img src="https://github.com/AndrewACodes/CIS350mineSweeper/blob/main/READMEpics/clickmineminesweeper.png" alt="---" style="max-width: 100%;" />
+<img src="https://github.com/AndrewACodes/CIS350mineSweeper/blob/main/READMEpics/youlostminesweeper2.0.png" alt="---" style="max-width: 100%;" />
 
 If the user manages to remove all non-bomb grids, leaving only bomb grids left, a pop-up window alerting the user that they've won is displayed. After clicking ok, the user can then click the reset button to start a new game.
 
-<img src="https://github.com/AndrewACodes/CIS350mineSweeper/blob/main/READMEpics/youvewonminesweeper.png" alt="---" style="max-width: 100%;" />
+<img src="https://github.com/AndrewACodes/CIS350mineSweeper/blob/main/READMEpics/youwonminesweeper2.0.png" alt="---" style="max-width: 100%;" />
 
 ## About
 
