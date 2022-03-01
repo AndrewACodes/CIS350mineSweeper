@@ -1,12 +1,12 @@
 # CIS350mineSweeper
 
-This MineSweeper project is created for GVSU CIS350 semester project. The developers for this project consist of Andrew Arent, Riley Rawlings, and Kaden Wende. This is a remake of the popular game MineSweeper. 
+This MineSweeper project is created for GVSU CIS350 semester project. The developers for this project consist of Andrew Arent, Ryley Rawlings, and Kaden Wende. This is a remake of the popular game MineSweeper. 
 
 The game works by uncovering squares that have a chance to contain a bomb. If it doesn't contain a bomb, it will reveal the number of bombs adjacent to that uncovered square. The goal of the game is to uncover all the the squares leaving only bomb squares left. 
 
 This game runs on java which means it will be able to run on any operating system! Windows, Mac, any Linux distribution, doesn't matter it will be able to run. (The game may have different style based on operating system, but overall gameplay will be accurate and the same.)
 
-<img src="https://github.com/AndrewACodes/CIS350mineSweeper/blob/0cc9b27dc9dbaafff042d513eef4fa417a347d44/READMEpics/minesweeperpic.png" alt="---" style="max-width: 100%;" />
+<img src="https://github.com/AndrewACodes/CIS350mineSweeper/blob/main/READMEpics/minesweeper_pic2.jpg" alt="---" style="max-width: 100%;" />
 
 ## Menu
 
@@ -31,7 +31,7 @@ This game runs on java which means it will be able to run on any operating syste
 
 ## How Does It Work?
 
-The program first initializes a window containing the grid of squares (20x20), a Reset button, and a Give Up button. All the bombs (roughly 20) are placed on the grid and the corresponding grids determine their number based on how many bombs are adjacent to them. When a grid is clicked, it checks to see if it was a bomb or if it was a 0. 
+The program first initializes a window containing the grid of squares (15x15), a Reset button, and a Give Up button. All the bombs (roughly 25) are placed on the grid and the corresponding grids determine their number based on how many bombs are adjacent to them. When a grid is clicked, it checks to see if it was a bomb or if it was a 0. 
 
 When a grid of number 0 is clicked within a large pool of 0 grids, a recursive formula removes all grids from the 0 grids plus 1 adjacent square next to the 0 grid. We can do this because if 0 adjacent squares contain bombs, then we can remove those squares for the user. This just makes the game quicker and easier for the user without messing with game mechanics. 
 
@@ -39,12 +39,12 @@ When a number grid 1-8 is clicked, just that grid is shown.
 
 When a bomb is clicked, a Gameover pop-up window is displayed alerting the user that they have clicked a mine. After which the entire board is cleared off and the user can click the reset button to start a new game. 
 
-<img src="https://github.com/AndrewACodes/CIS350mineSweeper/blob/main/READMEpics/clickmineminesweeper.png" alt="---" style="max-width: 100%;" />
+<img src="https://github.com/AndrewACodes/CIS350mineSweeper/blob/main/READMEpics/youlostminesweeper2.0.png" alt="---" style="max-width: 100%;" />
 
 If the user manages to remove all non-bomb grids, leaving only bomb grids left, a pop-up window alerting the user that they've won is displayed. After clicking ok, the user can then click the reset button to start a new game.
 
-<img src="https://github.com/AndrewACodes/CIS350mineSweeper/blob/main/READMEpics/youvewonminesweeper.png" alt="---" style="max-width: 100%;" />
+<img src="https://github.com/AndrewACodes/CIS350mineSweeper/blob/main/READMEpics/youwonminesweeper2.0.png" alt="---" style="max-width: 100%;" />
 
 ## About
 
-Project owner is Andrew Arent. Scrum Master is Riley Rawlings. Head Developer is Kaden Wende. We state that we are by no means the owner of the game "Minesweeper", we have just made a copy of a popular game for this project.
+Project owner is Andrew Arent. Scrum Master is Ryley Rawlings. Head Developer is Kaden Wende. We state that we are by no means the owner of the game "Minesweeper", we have just made a copy of a popular game for this project.
