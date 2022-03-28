@@ -5,30 +5,30 @@ import javax.swing.*;
 
 public class MainMenuGUI extends JFrame implements ActionListener{
 	
-	JButton easyButton = new JButton("Easy");
-	JButton mediumButton = new JButton("Medium");
-	JButton hardButton = new JButton("Hard");
+	JButton startButton = new JButton("Start");
+	JButton settingsButton = new JButton("Settings");
+	JButton exitButton = new JButton("Exit");
 
 	JPanel buttonPanel = new JPanel();
-	JLabel chooseLabel = new JLabel("Choose your difficulty:");
+	JLabel chooseLabel = new JLabel("MINESWEEPER! java edition");
 	JPanel labelPanel = new JPanel();
-	JPanel spacingPanel = new JPanel();
 	public MainMenuGUI() {
 		super("Minesweeper Main Menu");
 		setSize(500,300);
+		
 		setLayout(new BorderLayout(0, 50));
-		chooseLabel.setFont(new Font("Ariel",1,40));
-		easyButton.addActionListener(this);
-		mediumButton.addActionListener(this);
-		hardButton.addActionListener(this);
-		labelPanel.add(chooseLabel);
-		add(labelPanel, BorderLayout.NORTH);
-		add(spacingPanel, BorderLayout.SOUTH);
-		buttonPanel.add(easyButton);
-		buttonPanel.add(mediumButton);
-		buttonPanel.add(hardButton);
-		buttonPanel.setLayout(new GridLayout(1,3));
+		
+		startButton.addActionListener(this);
+		settingsButton.addActionListener(this);
+		exitButton.addActionListener(this);
+		
+		buttonPanel.add(startButton);
+		buttonPanel.add(settingsButton);
+		buttonPanel.add(exitButton);
+		buttonPanel.setLayout(new GridLayout(3,1));
+		
 		add(buttonPanel, BorderLayout.CENTER);
+		
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setVisible(true);
@@ -36,20 +36,19 @@ public class MainMenuGUI extends JFrame implements ActionListener{
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if (e.getSource() == easyButton) {
-			new GameGUI(9,10);
+		if (e.getSource() == startButton) {
+			new GameGUI(15, 40);
 			//closes the main menu
 			setVisible(false);
 		}
-		if (e.getSource() == mediumButton) {
-			new GameGUI(15,40);
+		if (e.getSource() == settingsButton) {
+			new SettingsMenuGUI();
 			//closes the main menu
 			setVisible(false);
 		}
-		if (e.getSource() == hardButton) {
-			new GameGUI(15,99);
+		if (e.getSource() == exitButton) {
 			//closes the main menu
-			setVisible(false);
+			System.exit(0);
 		}
 	}
 	
