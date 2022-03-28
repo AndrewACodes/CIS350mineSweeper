@@ -16,7 +16,7 @@ public class GameGUI extends JFrame implements ActionListener{
 
 	JButton restartButton = new JButton("Reset");
 	JButton giveUpButton = new JButton("Give Up");
-	JPanel bottomPanel = new JPanel();
+	JPanel topPanel = new JPanel();
 	JPanel tilePanel = new JPanel(); 
 	JButton[][] buttonGrid;
 	Minesweeper game;
@@ -35,13 +35,16 @@ public class GameGUI extends JFrame implements ActionListener{
 		game.generateMines();
 		game.generateTileValues();
 
+
 		setSize(800, 800);
+		
+
 		setLayout(new BorderLayout()); 
 		restartButton.addActionListener(this);
 		giveUpButton.addActionListener(this);
-		bottomPanel.add(giveUpButton);
-		bottomPanel.add(restartButton);
-		add(bottomPanel, BorderLayout.NORTH);
+		topPanel.add(giveUpButton);
+		topPanel.add(restartButton);
+		add(topPanel, BorderLayout.NORTH);
 
 		buttonGrid = new JButton[boardSize][boardSize];
 		for (int i = 0; i < boardSize; i++) {
