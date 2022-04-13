@@ -35,7 +35,18 @@ This game runs on java which means it will be able to run on any operating syste
 
 ## How Does It Work?
 
-The program first initializes a window containing the grid of squares (15x15), a Reset button, and a Give Up button. All the bombs (roughly 25) are placed on the grid and the corresponding grids determine their number based on how many bombs are adjacent to them. When a grid is clicked, it checks to see if it was a bomb or if it was a 0. 
+The program first initializes a window the main menu which consists of a start, a settings, and a exit button. Clicking exit will exit the program. Clicking Settings will open the settings menu and clicking start will start the game. 
+
+The settings menu consists of 3 labels each with 3 options; a difficulty, a environment, and a grid size. Then at the bottom there is a back and a refresh button. When an option is selected, it will update a group of static variables that will then be accessed by the program and when the game is starting.
+- The difficulty option will assign a default percentage of bombs to size of grid to a static variable. When the game is started it will take the length of the board and square it. This gives us the area. It then multiplies that by the difficulty percentage to give us the number of bombs needed to be in the game.
+- The mode option will change the color environment of the program. These color presets are coded into SettingsData and when the button is selected the main static variable will be changed to the new color preset. This allows the program to easily add more color presets without combing through files and files of code. The refresh button serves to show the user the color preset before starting the game, the user can stay in the settings menu and try out all the presets.
+- The size option will change the size of the grid. This will determine the length of the board which, when clicked, will change the static variable and allow the game to adjust its board size depending on the option the user wanted. 
+- 
+The back button goes back to the main menu. The main menu will access the mode static variable to change its color preset.
+
+When the start button is clicked, the program accesses all static variables that were set from the settings menu. This window contains a Back, a Give-up, and a Reset button. The back button will allow the user to go back to the main menu to adjust settings or exit. The Give-up button lets the user give-up and see the location of all bombs. And the Reset button will let the user Reset all tiles to play again. 
+
+When the window is initialized, all the bombs are then placed on the grid and the corresponding grids determine their number based on how many bombs are adjacent to them. When a grid is clicked, it checks to see if it was a bomb or if it was a 0. 
 
 When a grid of number 0 is clicked within a large pool of 0 grids, a recursive formula removes all grids from the 0 grids plus 1 adjacent square next to the 0 grid. We can do this because if 0 adjacent squares contain bombs, then we can remove those squares for the user. This just makes the game quicker and easier for the user without messing with game mechanics. 
 
