@@ -41,7 +41,7 @@ The settings menu consists of 3 labels each with 3 options; a difficulty, a envi
 - The difficulty option will assign a default percentage of bombs to size of grid to a static variable. When the game is started it will take the length of the board and square it. This gives us the area. It then multiplies that by the difficulty percentage to give us the number of bombs needed to be in the game.
 - The mode option will change the color environment of the program. These color presets are coded into SettingsData and when the button is selected the main static variable will be changed to the new color preset. This allows the program to easily add more color presets without combing through files and files of code. The refresh button serves to show the user the color preset before starting the game, the user can stay in the settings menu and try out all the presets.
 - The size option will change the size of the grid. This will determine the length of the board which, when clicked, will change the static variable and allow the game to adjust its board size depending on the option the user wanted. 
-- 
+
 The back button goes back to the main menu. The main menu will access the mode static variable to change its color preset.
 
 When the start button is clicked, the program accesses all static variables that were set from the settings menu. This window contains a Back, a Give-up, and a Reset button. The back button will allow the user to go back to the main menu to adjust settings or exit. The Give-up button lets the user give-up and see the location of all bombs. And the Reset button will let the user Reset all tiles to play again. 
