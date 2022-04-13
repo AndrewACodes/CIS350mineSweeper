@@ -11,6 +11,7 @@ This game runs on java which means it will be able to run on any operating syste
 ## Menu
 
 - [Upcoming Features](#upcoming-features)
+- [New Features](#new-features)
 - [How Does It Work?](#how-does-it-work)
 - [About](#about)
 
@@ -20,14 +21,14 @@ This game runs on java which means it will be able to run on any operating syste
 
 - **Timer.** A timer would allow for some type of urgency and thrill when playing. We'd also allow a customizable timer for the laid back players who may be busy while playing and will take longer to complete each puzzle.
 
-
-- **Difficulties.** Having multiple difficulties (Easy, Medium, Hard, Impossible) would allow the game to be customizable to different skill level players. The same difficulty may get repetitive. Multiple difficulties would give the user something to progress towards and a skill they can learn and improve on.
-
-
-- **Customizable environments.** The user will be able to change what the board looks like. (Dark mode, etc.) This would allow the user to feel more comfortable depending on the environment they are in (low light). It would also allow the user to feel more connected to the game when able to change the colors to exactly what they want.
+## New Features
+- **Difficulties.** Having multiple difficulties (Easy, Medium, Hard, Impossible) would allow the game to be customizable to different skill level players. The same difficulty may get repetitive. Multiple difficulties would give the user something to progress towards and a skill they can learn and improve on. We've implemented a easy, medium, and hard difficulties that places the bombs as a percentage of the total number of tiles. This is great because it allows the difficulties to scale with the size of the board. Default values could be changed but for now it is 12%, 16%, 20% respectively.
 
 
-- **Customizable grid size.** Allowing the user to change the grid size of the MineSweeper game will allow the user to roughly control how long it may take them to finish a game. A larger grid size will take longer to complete giving the player an added sense of accomplishment.
+- **Customizable environments.** The user will be able to change what the board looks like. This would allow the user to feel more comfortable depending on the environment they are in. It would also allow the user to feel more connected to the game when able to change the colors to exactly what they want. So far we've implemented light mode, dark mode, and cream mode. We've also implemented an adaptive system to allow quick additions of new environments in the SettingsData.java file.
+
+
+- **Customizable grid size.** Allowing the user to change the grid size of the MineSweeper game will allow the user to roughly control how long it may take them to finish a game. A larger grid size will take longer to complete giving the player an added sense of accomplishment. We've implemented 3 sizes; small, normal, and large. These sizes are based on the length of one side of the board, so small is 10x10, normal is 16x16, and large is 20x20.
 
 ## How Does It Work?
 
