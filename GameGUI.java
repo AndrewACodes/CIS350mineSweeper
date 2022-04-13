@@ -3,6 +3,7 @@ package CIS350mineSweeper;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import javax.swing.plaf.ColorUIResource;
 
 /**
  * The GameGUi.java class is a fully functioning GUI used to play the game MineSweeper.
@@ -14,6 +15,9 @@ import javax.swing.*;
 
 public class GameGUI extends JFrame implements ActionListener{
 
+	JLabel bombLabel = new JLabel("You clicked on a mine. Game over.");
+	JLabel winLabel = new JLabel("All Safe tiles revealed! You win!");
+	JButton backButton = new JButton("Back");
 	JButton restartButton = new JButton("Reset");
 	JButton giveUpButton = new JButton("Give Up");
 	JPanel topPanel = new JPanel();
@@ -36,12 +40,27 @@ public class GameGUI extends JFrame implements ActionListener{
 		game.generateTileValues();
 
 
-		setSize(800, 800);
-		
+		setSize(952, 952);
+		setBackground(SettingsData.backgroundC);
 
+		UIManager.put("OptionPane.background", SettingsData.backgroundC);
+		UIManager.put("OptionPane.messageForeground", SettingsData.textC);
+		UIManager.put("Panel.background", SettingsData.backgroundC);
+		UIManager.put("Button.background", SettingsData.primaryC);
+		UIManager.put("Button.foreground", SettingsData.backgroundC);
+		
 		setLayout(new BorderLayout()); 
+		backButton.addActionListener(this);
 		restartButton.addActionListener(this);
 		giveUpButton.addActionListener(this);
+		backButton.setBackground(SettingsData.primaryC);
+		restartButton.setBackground(SettingsData.primaryC);
+		giveUpButton.setBackground(SettingsData.primaryC);
+		backButton.setForeground(getBackground());
+		restartButton.setForeground(getBackground());
+		giveUpButton.setForeground(getBackground());
+		topPanel.setBackground(getBackground());
+		topPanel.add(backButton);
 		topPanel.add(giveUpButton);
 		topPanel.add(restartButton);
 		add(topPanel, BorderLayout.NORTH);
@@ -51,9 +70,11 @@ public class GameGUI extends JFrame implements ActionListener{
 			for (int j = 0; j < boardSize; j++) {
 				buttonGrid[i][j] = new JButton();
 				buttonGrid[i][j].addActionListener(this);
+				buttonGrid[i][j].setBackground(SettingsData.surfaceC);
 				tilePanel.add(buttonGrid[i][j]);
 			}
 		}
+		tilePanel.setBackground(getBackground());
 		tilePanel.setLayout(new GridLayout(boardSize, boardSize));
 		add(tilePanel, BorderLayout.CENTER);
 
@@ -79,6 +100,8 @@ public class GameGUI extends JFrame implements ActionListener{
 		for (int i = 0; i < game.boardSize; i++) {
 			for (int j = 0; j < game.boardSize; j++) {
 				buttonGrid[i][j].setText("");
+				buttonGrid[i][j].setBackground(SettingsData.surfaceC);
+				buttonGrid[i][j].setForeground(SettingsData.textC);
 				buttonGrid[i][j].setEnabled(true); 
 			}
 		}
@@ -87,6 +110,8 @@ public class GameGUI extends JFrame implements ActionListener{
 	private void reveal(int x, int y) {
 		buttonGrid[x][y].setText(""+game.getTileValue(x, y));
 		buttonGrid[x][y].setEnabled(false);
+		buttonGrid[x][y].setBackground(getBackground());
+		buttonGrid[x][y].setForeground(SettingsData.textC);
 		if (game.getTileValue(x, y) == 0) {
 			//if tile is not a leftmost tile in a row
 			if (x > 0) { 
@@ -97,6 +122,8 @@ public class GameGUI extends JFrame implements ActionListener{
 							&& buttonGrid[x-1][y].isEnabled() != false){
 						reveal(x-1, y);
 					}
+					buttonGrid[x-1][y].setBackground(getBackground());
+					buttonGrid[x-1][y].setForeground(SettingsData.textC);
 					buttonGrid[x-1][y].setEnabled(false);
 				}
 				//if tile is not an uppermost tile in a column
@@ -109,6 +136,8 @@ public class GameGUI extends JFrame implements ActionListener{
 								&& buttonGrid[x-1][y-1].isEnabled() != false){
 							reveal(x-1, y-1);
 						}
+						buttonGrid[x-1][y-1].setBackground(getBackground());
+						buttonGrid[x-1][y-1].setForeground(SettingsData.textC);
 						buttonGrid[x-1][y-1].setEnabled(false);
 					}
 				} 
@@ -123,6 +152,8 @@ public class GameGUI extends JFrame implements ActionListener{
 								&& buttonGrid[x-1][y+1].isEnabled() != false){
 							reveal(x-1, y+1);
 						}
+						buttonGrid[x-1][y+1].setBackground(getBackground());
+						buttonGrid[x-1][y+1].setForeground(SettingsData.textC);
 						buttonGrid[x-1][y+1].setEnabled(false);
 					}
 				}
@@ -136,6 +167,8 @@ public class GameGUI extends JFrame implements ActionListener{
 							&& buttonGrid[x+1][y].isEnabled() != false){
 						reveal(x+1, y);
 					}
+					buttonGrid[x+1][y].setBackground(getBackground());
+					buttonGrid[x+1][y].setForeground(SettingsData.textC);
 					buttonGrid[x+1][y].setEnabled(false);
 				}
 				//if tile is not uppermost tile in a column
@@ -148,6 +181,8 @@ public class GameGUI extends JFrame implements ActionListener{
 								&& buttonGrid[x+1][y-1].isEnabled() != false){
 							reveal(x+1, y-1);
 						}
+						buttonGrid[x+1][y-1].setBackground(getBackground());
+						buttonGrid[x+1][y-1].setForeground(SettingsData.textC);
 						buttonGrid[x+1][y-1].setEnabled(false);
 					}
 				}
@@ -161,6 +196,8 @@ public class GameGUI extends JFrame implements ActionListener{
 								&& buttonGrid[x+1][y+1].isEnabled() != false){
 							reveal(x+1, y+1);
 						}
+						buttonGrid[x+1][y+1].setBackground(getBackground());
+						buttonGrid[x+1][y+1].setForeground(SettingsData.textC);
 						buttonGrid[x+1][y+1].setEnabled(false);
 					}
 				}
@@ -173,6 +210,8 @@ public class GameGUI extends JFrame implements ActionListener{
 					if (game.getTileValue(x, y-1) == 0 && buttonGrid[x][y-1].isEnabled() != false){
 						reveal(x, y-1);
 					}
+					buttonGrid[x][y-1].setBackground(getBackground());
+					buttonGrid[x][y-1].setForeground(SettingsData.textC);
 					buttonGrid[x][y-1].setEnabled(false);
 				}
 			}
@@ -183,6 +222,8 @@ public class GameGUI extends JFrame implements ActionListener{
 					if (game.getTileValue(x, y+1) == 0 && buttonGrid[x][y+1].isEnabled() != false){
 						reveal(x, y+1);
 					}
+					buttonGrid[x][y+1].setBackground(getBackground());
+					buttonGrid[x][y+1].setForeground(SettingsData.textC);
 					buttonGrid[x][y+1].setEnabled(false);
 				}
 			}
@@ -193,6 +234,8 @@ public class GameGUI extends JFrame implements ActionListener{
 		for (int i = 0; i < game.boardSize; i++) {
 			for (int j = 0; j < game.boardSize; j++) {
 				buttonGrid[i][j].setText("" + game.getTileValue(i, j));
+				buttonGrid[i][j].setBackground(getBackground());
+				buttonGrid[i][j].setForeground(SettingsData.textC);
 				buttonGrid[i][j].setEnabled(false); 
 			}
 		}
@@ -205,6 +248,9 @@ public class GameGUI extends JFrame implements ActionListener{
 			game.restart();
 		} else if (e.getSource() == giveUpButton) {
 			gameOver();
+		} else if(e.getSource() == backButton){
+			new MainMenuGUI();
+			setVisible(false);
 		} else {
 			for (int i = 0; i < game.boardSize; i++) {
 				for (int j = 0; j < game.boardSize; j++) {
@@ -215,8 +261,8 @@ public class GameGUI extends JFrame implements ActionListener{
 							checkIfWin();
 						} else {
 							gameOver();
-							JOptionPane.showMessageDialog
-							(null, "You clicked on a mine. Game over.");
+							
+							JOptionPane.showMessageDialog(null, "You clicked a mine. Game Over!");
 						}
 					}
 				}
