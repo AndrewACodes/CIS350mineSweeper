@@ -298,6 +298,7 @@ public class GameGUI extends JFrame implements ActionListener{
 			restartBoard();
 			game.restart();
 		} else if (e.getSource() == giveUpButton) {
+			JOptionPane.showMessageDialog(null, "You Give up.");
 			gameOver();
 		} else if(e.getSource() == backButton){
 			new MainMenuGUI();
@@ -330,8 +331,13 @@ public class GameGUI extends JFrame implements ActionListener{
 							}
 						} else if (flagButton.isEnabled() == ACTIVE_MODE) {
 							if (buttonGrid[i][j].isEnabled() == true) {
-								buttonGrid[i][j].setIcon(new ImageIcon("src/CIS350mineSweeper/Assets/FlagSprite.png"));
-								buttonGrid[i][j].setFlagged(true);
+								if (buttonGrid[i][j].isFlagged() == false) {
+									buttonGrid[i][j].setIcon(new ImageIcon("src/CIS350mineSweeper/Assets/FlagSprite.png"));
+									buttonGrid[i][j].setFlagged(true);
+								} else {
+									buttonGrid[i][j].setIcon(null);
+									buttonGrid[i][j].setFlagged(false);
+								}
 							}
 						}
 					}

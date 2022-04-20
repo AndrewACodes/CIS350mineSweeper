@@ -45,13 +45,6 @@ public class GameTimer {
 		}
 	}
 	
-	public boolean isSuspended() {
-		return suspended;
-	}
-
-	public void setSuspended(boolean suspended) {
-		this.suspended = suspended;
-	}
 	
 	public String toString() {
 		DecimalFormat minuteFormat = new DecimalFormat("0");
