@@ -282,12 +282,16 @@ public class GameGUI extends JFrame implements ActionListener{
 		gameTimer = new GameTimer();
 		for (int i = 0; i < game.boardSize; i++) {
 			for (int j = 0; j < game.boardSize; j++) {
-				buttonGrid[i][j].setIcon(null);
-				buttonGrid[i][j].setFlagged(false);
-				buttonGrid[i][j].setText("" + game.getTileValue(i, j));
-				buttonGrid[i][j].setBackground(getBackground());
-				buttonGrid[i][j].setForeground(SettingsData.textC);
-				buttonGrid[i][j].setEnabled(false); 
+				if(game.getTileValue(i, j) == Minesweeper.MINE_VALUE) {
+					buttonGrid[i][j].setIcon(new ImageIcon("src/CIS350mineSweeper/Assets/mineSprite.png"));
+				} else {
+					buttonGrid[i][j].setIcon(null);
+					buttonGrid[i][j].setFlagged(false);
+					buttonGrid[i][j].setText("" + game.getTileValue(i, j));
+					buttonGrid[i][j].setBackground(getBackground());
+					buttonGrid[i][j].setForeground(SettingsData.textC);
+					buttonGrid[i][j].setEnabled(false); 
+				}
 			}
 		}
 	}
@@ -298,6 +302,7 @@ public class GameGUI extends JFrame implements ActionListener{
 			restartBoard();
 			game.restart();
 		} else if (e.getSource() == giveUpButton) {
+			timer.stop();
 			JOptionPane.showMessageDialog(null, "You Give up.");
 			gameOver();
 		} else if(e.getSource() == backButton){
@@ -350,6 +355,7 @@ public class GameGUI extends JFrame implements ActionListener{
 	
 	private class TimerListener implements ActionListener {
 		long lastTime = System.nanoTime();
+		
 		public void actionPerformed(ActionEvent e) {
 			gameTimer.add((int)(System.nanoTime() - lastTime) / 1000000);
 			lastTime = System.nanoTime();

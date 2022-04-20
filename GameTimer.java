@@ -2,6 +2,9 @@ package CIS350mineSweeper;
 
 import java.text.DecimalFormat;
 
+/******************************************************************
+ * A class used to keep time for a minesweeper game using GAMEGUI.java
+ */
 
 public class GameTimer {
 
@@ -21,6 +24,9 @@ public class GameTimer {
 		this.milliseconds = 0;
 	}
 	
+	/******************************************************************
+	 * A method for incrementing the milliseconds by 1 millisecond.
+	 */
 	public void inc() {
 		if (!suspended) {
 			milliseconds++;
@@ -37,6 +43,11 @@ public class GameTimer {
 		}
 	}
 	
+	/******************************************************************
+	 * A method for adding a specific number of milliseconds
+	 * @param milliseconds: number of milliseconds to be added
+	 */
+	
 	public void add(int milliseconds) {		
 		if (!suspended) {
 			for(int i = 0; i < milliseconds; i++) {
@@ -45,6 +56,10 @@ public class GameTimer {
 		}
 	}
 	
+	/******************************************************************
+	 * A method for taking the GameTimer and making it into a string that can be used as a clock.
+	 * @return formated string to look like a stopwatch.
+	 */
 	
 	public String toString() {
 		DecimalFormat minuteFormat = new DecimalFormat("0");
